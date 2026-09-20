@@ -13,8 +13,6 @@ import { Modal } from '../../components/Modal/Modal';
 import { NoteForm } from '../../components/NoteForm/NoteForm';
 import { Pagination } from '../../components/Pagination/Pagination';
 
-import css from './Notes.module.css';
-
 export default function NotesClient() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
@@ -44,12 +42,11 @@ export default function NotesClient() {
   const totalPages: number = data?.totalPages || 0;
 
   return (
-    <div className={css.container}>
-      <div className={css.toolbar}>
+    <div>
+      <div>
         <SearchBox value={inputValue} onChange={handleSearchChange} />
         <button
           type="button"
-          className={css.createButton}
           onClick={() => setIsModalOpen(true)}
         >
           Create note +
